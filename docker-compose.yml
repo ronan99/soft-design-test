@@ -1,0 +1,33 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'bookstore'
+      MYSQL_USER: 'softdesign'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - /home/tmp/mysql:/var/lib/mysql
+
+  php:
+    container_name: yii_softdesign
+    build: .
+    volumes:
+      - ./:/app
+      # - ./composer.json:/app/composer.json
+      # - ./composer.lock:/app/composer.lock
+      # - ./vendor:/app/vendor
+      # - ./config:/app/config
+      # - ./src:/app/src
+      # - ./web:/app/web
+      # - ./tests:/app/tests
+      # # composer-cache on host-volume
+      # - ~/.composer-docker/cache:/root/.composer/cache
+    ports:
+      - 8080:80
