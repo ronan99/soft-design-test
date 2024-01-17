@@ -15,11 +15,11 @@ services:
     volumes:
       - /home/tmp/mysql:/var/lib/mysql
 
-  php:
-    container_name: yii_softdesign
-    build: .
+  backend:
+    container_name: backend_yii
+    build: ./backend
     volumes:
-      - ./:/app
+      - ./backend:/app
       # - ./composer.json:/app/composer.json
       # - ./composer.lock:/app/composer.lock
       # - ./vendor:/app/vendor
@@ -31,3 +31,10 @@ services:
       # - ~/.composer-docker/cache:/root/.composer/cache
     ports:
       - 8080:80
+  frontend:
+    container_name: frontend_angular
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 4200:4200
