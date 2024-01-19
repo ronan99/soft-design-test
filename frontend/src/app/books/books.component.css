@@ -1,0 +1,22 @@
+table {
+  width: 80%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+
+.books-container{
+  display: flex;
+  padding: 50px;
+  height: 100%;
+}
+
+
+mat-form-field {
+  width: 100%;
+}
+
+
+

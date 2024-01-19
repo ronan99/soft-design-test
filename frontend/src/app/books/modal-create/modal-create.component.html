@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Cadastro de livro</h1>
+<form  [formGroup]="formBook" (ngSubmit)="createBook()">
+  <div mat-dialog-content>
+      <mat-grid-list cols="2" [gutterSize]="'10px'" rowHeight="2:1">
+        <mat-grid-tile [colspan]="2">
+          <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input type="text" matInput placeholder="Título" formControlName="title" >
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          <mat-form-field>
+            <mat-label>Descrição</mat-label>
+            <textarea matInput placeholder="Descrição" formControlName="description"></textarea>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          <mat-form-field>
+            <mat-label>Autor</mat-label>
+            <input type="text" matInput placeholder="Autor" formControlName="author" >
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          <mat-form-field>
+            <mat-label>Páginas</mat-label>
+            <input type="number" matInput placeholder="Páginas" formControlName="pages" >
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+  </div>
+  <div mat-dialog-actions>
+    <div class="split-button">
+      <button type="button" mat-button mat-dialog-close>Cancelar</button>
+      <button type="submit" mat-button>Criar</button>
+    </div>
+
+  </div>
+</form>
+
