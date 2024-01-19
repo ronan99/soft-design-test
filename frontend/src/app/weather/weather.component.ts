@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Weather } from 'src/app/weather/weather.dto';
 import { WeatherService } from 'src/app/weather/weather.service';
 

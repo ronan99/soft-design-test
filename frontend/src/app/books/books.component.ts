@@ -40,9 +40,9 @@ export class BooksComponent {
         next: (res) => {
           console.log(res)
           this.dataSource.data = res
-          this.dataSource.filterPredicate = (data: Book, filter: string | number): boolean => {
+          this.dataSource.filterPredicate = (data: Book, filter: string): boolean => {
             return (
-              data.title.toLocaleLowerCase().includes(filter.toString()) || data.author == filter
+              data.title.toLocaleLowerCase().includes(filter) || data.author.toLocaleLowerCase().includes(filter)
             )
           }
 
@@ -95,7 +95,7 @@ export class BooksComponent {
       if(result){
         let rep = this.dataSource.data.findIndex( x => x.id == result.id)
         if(rep !== -1) this.dataSource.data[rep] = result;
-        this.dataSource.paginator = this.paginator;
+        this.dataSource._updateChangeSubscription();
       }
 
     });
@@ -110,7 +110,7 @@ export class BooksComponent {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         this.dataSource.data.push(result as Book)
-        this.dataSource.paginator = this.paginator;
+        this.dataSource._updateChangeSubscription();
       }
 
     });
