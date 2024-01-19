@@ -1,62 +1,88 @@
-DESAFIO VAGA FULLSTACK PHP
+# DESAFIO VAGA FULLSTACK PHP
 
-
-Objetivo:
+## Objetivo:
 Criar uma aplicação web em PHP com acesso restrito, que exiba uma listagem de livros com as opções de ver os detalhes, editar, deletar e criar um livro, e também exiba o clima atual da sua região.
 
-O prazo para realização do teste é de 5 dias.
-Após o término da prova, colocar o código em algum repositório público (github, gitlab, bitbucket.. ) e então informar nas respostas o caminho onde está a prova para avaliação respondendo o email.
+O prazo para realização do teste é de 5 dias. Após o término da prova, colocar o código em algum repositório público (github, gitlab, bitbucket.. ) e então informar nas respostas o caminho onde está a prova para avaliação respondendo o email.
 
-Funcionalidades:
+## Funcionalidades:
 
-1) Tela de Login
-• A tela inicial deve ser a de login;
-• Não deve ser possível acessar outras telas sem realizar o login;
+### 1) Tela de Login
+- A tela inicial deve ser a de login;
+- Não deve ser possível acessar outras telas sem realizar o login;
 
-2) CRUD de Livros
-• Listagem de livros com paginação e filtragem;
-• Adição e Edição de Livros;
-o Dados do Livro
- Título;
- Descrição;
- Autor;
- Número de Páginas;
- Data de Cadastro;
-• Exclusão de um livro.
+### 2) CRUD de Livros
+- Listagem de livros com paginação e filtragem;
+- Adição e Edição de Livros;
+  - Dados do Livro
+    - Título;
+    - Descrição;
+    - Autor;
+    - Número de Páginas;
+    - Data de Cadastro;
+- Exclusão de um livro.
 
-3) Clima da região
-• Integração com API externa para exibir o clima de uma determinada região;
-• Mostrar apenas o Clima atual.
-o API https://hgbrasil.com/status/weather. Consultar documentação https://console.hgbrasil.com/documentation/weather.
-
-
-Requisitos:
-• Linguagem de programação em PHP na versão 8.1;
-• Banco de dados relacional MySQL;
-• Utilizar o Framework PHP Yii Framework 2;
-• Não usar CMS de mercado (Wordpress, Joomla...);
-• Dados de acesso em MOCK ou usar Migrations;
-• README estruturado com descrição e orientações sobre o projeto;
-• Disponibilizar o projeto em repositório público para (github, gitlab, bitbucket.. );
-• Frontend em Angular (versão 10 ou superior)
-• Código, commits e comentários em inglês.
-• Design Responsivo.
-
-Diferenciais (e não obrigatórios)
-• Aplicação rodando com Docker;
-• Testes unitários;
-• Uso de Migrations;
-
-Critérios de Avaliação:
-• Cuidados com estruturação de código;
-• Falhas de Sintaxe;
-• Validações e cumprimento das regras de negócio;
-• Cuidados com design (UI/UX, responsividade e CSS);
-• Interface organizada e amigável;
-• Componentização;
-• Cumprimento de Funcionalidades e Requisitos;
-• Compromisso com o prazo de entrega.
+### 3) Clima da região
+- Integração com API externa para exibir o clima de uma determinada região;
+- Mostrar apenas o Clima atual.
+  - API [https://hgbrasil.com/status/weather](https://hgbrasil.com/status/weather). Consultar documentação [https://console.hgbrasil.com/documentation/weather](https://console.hgbrasil.com/documentation/weather).
 
 
+### Como Rodar:
 
-Importante: caso não consiga finalizar completamente o desafio dentro do prazo estipulado, não deixe de enviar seu código para nossa avaliação. Envie e comunique o que você desenvolveu e o que ficou faltando.
+Este README fornece instruções para configurar e executar o projeto Angular em conjunto com o PHP usando Docker.
+
+## Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+
+- Git
+- Docker
+- Docker Compose
+- Node.js (npm)
+
+## Instruções para Execução
+
+### 1. Clone o Repositório
+
+```bash
+git clone <url-do-repo>
+cd nome-do-repo
+```
+
+### 2. Instale as Dependências do Frontend
+Na pasta do frontend, execute:
+
+```bash
+npm install
+```
+
+###3. Configuração do Docker
+Na raiz do projeto, execute:
+
+```bash
+docker-compose build
+docker-compose up -d
+docker exec backend_yii php yii migrate
+```
+
+### 4. Acesse o Frontend
+   Abra o navegador e acesse:
+
+   [http://localhost:4200](http://localhost:4200)
+
+### 5. Acesse o Backend
+   Para acessar o backend, abra o navegador e vá para:
+
+   [http://localhost:8080](http://localhost:8080)
+
+### 6. Credenciais de Acesso
+   - **Usuário Padrão:**
+     - E-mail: admin@test.com
+     - Senha: 123456789
+
+### Observação:
+
+**Caso a chave de consulta de clima não exceda o limite de requisições, acessar [https://hgbrasil.com/status/weather](https://hgbrasil.com/status/weather), Criar uma nova chave e trocar no arquivo:**
+
+[src/app/shared/config.ts](https://github.com/ronan99/soft-design-test/blob/feat/crud-book/frontend/src/app/shared/config.ts)
