@@ -6,5 +6,4 @@ return [
     'username' => 'softdesign',
     'password' => 'password',
     'charset' => 'utf8',
-    
 ];

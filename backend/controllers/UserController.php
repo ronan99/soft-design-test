@@ -21,7 +21,7 @@ class UserController extends BaseController
             return ['token' => $token];
         } else {
             Yii::$app->response->statusCode = 401;
-            return ['error' => 'Invalid login credentials'];
+            return ['message' => 'Credenciais inválidas'];
         }
     }
 

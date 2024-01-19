@@ -1,0 +1,18 @@
+{
+  "/api/*": {
+      "target": "http://backend/",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+  },
+  "/weather/*": {
+    "target": "https://api.hgbrasil.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/weather": ""
+    }
+  }
+}

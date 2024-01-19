@@ -10,14 +10,6 @@ use yii\rest\ActiveController;
 class BookController extends ActiveController{
     public $modelClass = Book::class;
 
-    // public function actionCreate(){
-    //     $model = new Book();
-    //     $model->attributes = Yii::$app->request->post();
-    //     $book = $model->save();
-
-    //     return $book;
-    // }
-
     public function behaviors()
     {
         $behaviors = parent::behaviors();

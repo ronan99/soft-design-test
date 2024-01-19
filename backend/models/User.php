@@ -87,7 +87,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function login(){
         $user = $this->findOne(['email' => $this->email]);
 
-        if($user){
+        if($user && \Yii::$app->getSecurity()->validatePassword($this->password, $user->password)){
             return $user;
         }
         return false;
