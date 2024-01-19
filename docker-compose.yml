@@ -20,15 +20,8 @@ services:
     build: ./backend
     volumes:
       - ./backend:/app
-      # - ./composer.json:/app/composer.json
-      # - ./composer.lock:/app/composer.lock
-      # - ./vendor:/app/vendor
-      # - ./config:/app/config
-      # - ./src:/app/src
-      # - ./web:/app/web
-      # - ./tests:/app/tests
-      # # composer-cache on host-volume
-      # - ~/.composer-docker/cache:/root/.composer/cache
+      - /app/vendor
+
     ports:
       - 8080:80
   frontend:

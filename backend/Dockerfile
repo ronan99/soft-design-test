@@ -4,12 +4,10 @@ RUN a2enmod rewrite
 
 WORKDIR /app
 
-ADD composer.lock composer.json /app/
+COPY composer.json .
 RUN composer install --prefer-dist --optimize-autoloader --no-dev && \
     composer clear-cache
 
 COPY . .
 
-
 RUN chown -R www-data:www-data runtime
-
