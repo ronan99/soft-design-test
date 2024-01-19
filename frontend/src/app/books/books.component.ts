@@ -87,7 +87,8 @@ export class BooksComponent {
 
   openUpdateBookDialog(data: Book){
     const dialogRef = this.dialog.open(ModalUpdateComponent, {
-      minWidth: "300px",
+      minWidth: "400px",
+      minHeight: "400px",
       data: data
     });
 
@@ -103,8 +104,8 @@ export class BooksComponent {
 
   openCreateBookDialog(): void {
     const dialogRef = this.dialog.open(ModalCreateComponent, {
-      minWidth: "300px",
-
+      minWidth: "400px",
+      minHeight: "400px"
     });
 
     dialogRef.afterClosed().subscribe(result => {
