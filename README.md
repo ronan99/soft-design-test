@@ -57,26 +57,35 @@ Na pasta do frontend, execute:
 npm install
 ```
 
-###3. Configuração do Docker
+### 3. Configuração do Docker
 Na raiz do projeto, execute:
 
 ```bash
 docker-compose build
 docker-compose up -d
-docker exec backend_yii php yii migrate
 ```
 
-### 4. Acesse o Frontend
+### 4. Migration
+Entre no container do backend e execute as migrations
+
+```
+docker exec -it backend_yii bash
+php yii migrate
+```
+
+**Nota: Trocar bash pelo GNU utilizado, seja ele BASH ou SH, etc.**
+
+### 5. Acesse o Frontend
    Abra o navegador e acesse:
 
    [http://localhost:4200](http://localhost:4200)
 
-### 5. Acesse o Backend
+### 6. Acesse o Backend
    Para acessar o backend, abra o navegador e vá para:
 
    [http://localhost:8080](http://localhost:8080)
 
-### 6. Credenciais de Acesso
+### 7. Credenciais de Acesso
    - **Usuário Padrão:**
      - E-mail: admin@test.com
      - Senha: 123456789

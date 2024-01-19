@@ -10,4 +10,4 @@ RUN composer install --prefer-dist --optimize-autoloader --no-dev && \
 
 COPY . .
 
-RUN chown -R www-data:www-data runtime
+RUN chown -R www-data:www-data runtime web/assets

@@ -17,6 +17,15 @@ export class LoginComponent {
     password: new FormControl<string>('', [Validators.required]),
   });
   hide: Boolean = true;
+
+  ngOnInit(){
+    this.loginService.isLogged().subscribe({
+      next: () => {
+        this.router.navigateByUrl("/app")
+      }
+    });
+  }
+
   login(): void{
 
     const data = this.form.value as Login

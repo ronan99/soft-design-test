@@ -14,4 +14,8 @@ export class LoginService {
     return this.http.post( "/api/user/login", login)
   }
 
+  isLogged(): Observable<any>{
+    return this.http.post("/api/user/is-logged", null)
+  }
+
 }
